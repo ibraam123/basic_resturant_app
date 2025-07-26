@@ -12,7 +12,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final AuthController authController = Get.find<AuthController>();
 
     return Scaffold(
@@ -20,9 +19,9 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Header(size: size, name: "Welcome To My App"),
-             SizedBox(height: 30.h),
-             Padding(
+            Header(name: "Welcome To Restaurant"),
+            SizedBox(height: 30.h),
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -44,15 +43,15 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 30.h),
-                   CustomButton(
+                  CustomButton(
                     onPressed: () {
                       authController.login();
                     },
                     buttonText: "Login",
                     color: Colors.orange,
                   ),
-                   SizedBox(height: 20.h),
-                   CustomButton(
+                  SizedBox(height: 20.h),
+                  CustomButton(
                     onPressed: () {
                       authController.signup();
                     },

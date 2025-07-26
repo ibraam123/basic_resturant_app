@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Header extends StatelessWidget {
-  final Size size;
   final String name;
 
-  const Header({super.key, required this.size, required this.name});
+  const Header({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: size.height * 0.33,
+      height: 260.h,
       decoration: const BoxDecoration(color: Colors.orange),
       child: Stack(
         children: [
@@ -22,9 +22,9 @@ class Header extends StatelessWidget {
               children: [
                 Text(
                   name ,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

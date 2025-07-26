@@ -26,8 +26,8 @@ class FoodItemCard extends StatelessWidget {
             children: [
               // Image section
               Container(
-                width: 80.w,
-                height: 80.h,
+                width: 60.w,
+                height: 60.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.r),
                   color: Colors.grey.shade200,
@@ -44,8 +44,6 @@ class FoodItemCard extends StatelessWidget {
               ),
 
               const SizedBox(width: 16),
-
-              // Info section
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +51,7 @@ class FoodItemCard extends StatelessWidget {
                     Text(
                       item.name,
                       style: TextStyle(
-                        fontSize: 18.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -63,7 +61,7 @@ class FoodItemCard extends StatelessWidget {
                     Text(
                       '\$${item.price.toString()}',
                       style: TextStyle(
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                         color: Colors.green.shade700,
                         fontWeight: FontWeight.w600,
                       ),
@@ -75,6 +73,11 @@ class FoodItemCard extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Get.find<ItemsController>().addToCart(item);
+                  Get.snackbar(
+                    "Added to Cart",
+                    "${item.name} added to cart",
+                    snackPosition: SnackPosition.BOTTOM,
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
@@ -86,7 +89,7 @@ class FoodItemCard extends StatelessWidget {
                 child: Text(
                   'Add to Cart',
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: 12.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
